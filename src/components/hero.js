@@ -15,19 +15,14 @@ const Hero = () => {
         className="img"
         alt="color palette"
       />
-      {/* <div id="topMenuController" className="menuController show">
-        <div class="line _1 has_transition_1000_inout"></div>
-        <div class="line _2 has_transition_1000_inout d100"></div>
-        <div class="line _3 has_transition_1000_inout d200"></div>
-      </div> */}
 			<TopMenuController />
-      {/* <div className="info">
+      <div className="info">
         <article>
           <h3>If you can dream it, we can create it</h3>
           <h1>let your home be inique and stylish</h1>
           <Link to="/projects">Projects</Link>
         </article>
-      </div> */}
+      </div>
     </Wrapper>
   )
 }
