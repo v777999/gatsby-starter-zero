@@ -1,19 +1,19 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Hero from "../components/hero"
 import Footer from "../components/footer"
-import MenuController from "../components/menu-controller"
+import MenuController from "../components/MenuController"
 import ComplexTitle from "../components/ComplexTitle"
 
 import "../assets/css/main.css"
+import CustomCursor from "../components/CustomCursor"
+// import "../assets/css/style.css"
 
-const IndexPage = () => {
-  return (
-    <>
+const IndexPage = () => (
+		<Layout pageInfo={{ pageName: "index" }}>
       <Seo title="Home" />
       <Hero />
       {/* <h1>Hi people</h1>
@@ -33,8 +33,7 @@ const IndexPage = () => {
 			</p> */}
 			<ComplexTitle title="Main Title"/>
 			<Footer />
-    </>
+			</Layout>
   )
-}
 
 export default IndexPage

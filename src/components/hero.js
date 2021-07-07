@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "../assets/css/main.css"
 import TopMenuController from "./TopMenuController"
+import MenuBar from "./MenuBar"
 
 const Hero = () => {
   return (
@@ -15,13 +16,33 @@ const Hero = () => {
         className="img"
         alt="color palette"
       />
-			<TopMenuController />
+      <MenuBar />
       <div className="info">
         <article>
-          <h3>If you can dream it, we can create it</h3>
-          <h1>let your home be inique and stylish</h1>
-          <Link to="/projects">Projects</Link>
-        </article>
+          <h3 className="animate_in_left animated">
+            If you can dream it, we can create it
+          </h3>
+					<h1>let your home be inique and stylish</h1>
+					{/* <a href="/projects">Projects</a> */}
+          <Link to="/projects" className="target">Projects</Link>
+				</article>
+				<div className="flex justify-between mb-5">
+          <div>
+            <a href="about" className="uppercase notTarget">
+              about
+            </a>
+          </div>
+          <div>
+            <a href="contact" className="uppercase notTarget">
+              contact us
+            </a>
+          </div>
+          <div>
+            <a href="portfolio" className="uppercase notTarget">
+              portfolio
+            </a>
+          </div>
+        </div>
       </div>
     </Wrapper>
   )
@@ -34,7 +55,25 @@ const Wrapper = styled.section`
   .img {
     height: 100%;
   }
-  
+  .sidebar {
+    opacity: 0;
+    transition: all 0.3s linear;
+    transform: translateX(-100%);
+  }
+	.show-sidebar {
+  opacity: 1;
+  transform: translateX(0);
+}
+  .animate_in_left {
+    transform: translateX(-100%);
+    transition: 1200ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-property: transform;
+    overflow: hidden;
+    position: relative;
+  }
+  .animate_in_left.animated {
+    transform: translateX(0);
+  }
   // }  .line {
   //     width: 3vw;
   //     max-width: 70px;
@@ -46,7 +85,7 @@ const Wrapper = styled.section`
   //   ._1 {
   //     margin-top: 0;
   //   }
-  
+
   .info {
     position: absolute;
     top: 0;
@@ -55,7 +94,7 @@ const Wrapper = styled.section`
     height: 100%;
     display: grid;
     place-items: center;
-    // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   }
   article {
     width: 85vw;
@@ -84,10 +123,10 @@ const Wrapper = styled.section`
       cursor: pointer;
       transition: var(--transition);
     }
-    a:hover {
+    /* a:hover {
       background: var(--clr-white);
       color: var(--clr-black);
-    }
+    } */
     @media (min-width: 800px) {
       /* padding: 0 1rem; */
       a {
