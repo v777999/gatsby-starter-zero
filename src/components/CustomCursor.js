@@ -8,6 +8,7 @@ const isMobile = () => {
 }
 
 const CustomCursor = () => {
+	// if (typeof navigator !== 'undefined' && isMobile()) return null;
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [hidden, setHidden] = useState(false)
   const [clicked, setClicked] = useState(false)

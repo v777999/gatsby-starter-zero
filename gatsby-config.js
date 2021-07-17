@@ -7,7 +7,8 @@ module.exports = {
 		siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     url: `https://systemadigital.ru`,
     twitterUsername: `@john_smilga`,
-    image: `/mainImg.png`,
+		image: `/mainImg.png`,
+		themeColor: content=`plum`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,6 +22,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		'gatsby-plugin-postcss',
 		`gatsby-plugin-styled-components`,
     // {
     //   resolve: `gatsby-plugin-manifest`,
@@ -34,7 +36,15 @@ module.exports = {
     //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
     //   },
     // },
-    `gatsby-plugin-gatsby-cloud`,
+		`gatsby-plugin-gatsby-cloud`,
+		{
+      resolve: 'gatsby-source-storyblok',
+      options: {
+        accessToken: 'CQeLtVS9xS4u1lTeHdpNBwtt',
+        version: 'draft',
+        // languages: ['de', 'at'] // Optional parameter. Omission will retrieve all languages by default.
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
